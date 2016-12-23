@@ -1,0 +1,8 @@
+#surefire
+#Wed Dec 21 23:22:50 BRST 2016
+maven.ext.class.path=C\:\\Program Files\\NetBeans 8.1\\java\\maven-nblib\\netbeans-eventspy.jar
+user.dir=C\:\\Users\\Julio Leme\\Documents\\NetBeansProjects\\mavenproject1\\AvenueCode
+file.encoding=UTF-8
+localRepository=C\:\\Users\\Julio Leme\\.m2\\repository
+netbeans.deploy=true
+basedir=C\:\\Users\\Julio Leme\\Documents\\NetBeansProjects\\mavenproject1\\AvenueCode
