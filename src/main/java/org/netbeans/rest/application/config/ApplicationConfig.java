@@ -12,7 +12,10 @@ import javax.ws.rs.core.Application;
  *
  * @author Julio Leme
  */
-@javax.ws.rs.ApplicationPath("webresources")
+import java.util.Set;
+import javax.ws.rs.core.Application;
+
+@javax.ws.rs.ApplicationPath("recursos")
 public class ApplicationConfig extends Application {
 
     @Override
@@ -23,13 +26,12 @@ public class ApplicationConfig extends Application {
     }
 
     /**
-     * Do not modify addRestResourceClasses() method.
-     * It is automatically populated with
-     * all resources defined in the project.
-     * If required, comment out calling this method in getClasses().
+     * Do not modify addRestResourceClasses() method. It is automatically
+     * populated with all resources defined in the project. If required, comment
+     * out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(com.mycompany.avenuecode.business.ContinentResource.class);
+        resources.add(com.mycompany.avenuecode.business.service.ContinentFacadeREST.class);
     }
-    
 }

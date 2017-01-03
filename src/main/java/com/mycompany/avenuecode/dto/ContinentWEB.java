@@ -5,27 +5,28 @@
  */
 package com.mycompany.avenuecode.dto;
 
-import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
 /**
  *
  * @author Julio Leme
  */
-@Entity
-public class CityDTO implements Serializable {
-    
-    @Id
-    private Long id;
-    private String name;
-    private Long population;
+public class ContinentWEB {
 
-    public Long getId() {
+    private Integer id;
+    private String name;
+    private Integer population;
+
+    public ContinentWEB() {  }
+
+    public ContinentWEB(String name, Integer population) {
+        this.name = name;
+        this.population = population;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -37,12 +38,12 @@ public class CityDTO implements Serializable {
         this.name = name;
     }
 
-    public Long getPopulation() {
+    public Integer getPopulation() {
         return population;
     }
 
-    public void setPopulation(Long population) {
+    public void setPopulation(Integer population) {
         this.population = population;
     }
- 
+
 }

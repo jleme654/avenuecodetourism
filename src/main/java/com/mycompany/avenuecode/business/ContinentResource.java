@@ -6,7 +6,7 @@
 package com.mycompany.avenuecode.business;
 
 import com.google.gson.Gson;
-import com.mycompany.avenuecode.dto.ContinentDTO;
+import com.mycompany.avenuecode.dto.Continent;
 import javax.ejb.EJB;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
@@ -49,7 +49,7 @@ public class ContinentResource {
     @Consumes("application/json")
     public String saveContinent(String name) {
         try {
-            ContinentDTO p = gson.fromJson(name, ContinentDTO.class);
+            Continent p = gson.fromJson(name, Continent.class);
             return gson.toJson(ejb.save(p));
         } catch (Exception e) {
             return e.getMessage();

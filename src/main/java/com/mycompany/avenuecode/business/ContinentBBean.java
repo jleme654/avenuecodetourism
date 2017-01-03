@@ -5,7 +5,8 @@
  */
 package com.mycompany.avenuecode.business;
 
-import com.mycompany.avenuecode.dto.ContinentDTO;
+import com.mycompany.avenuecode.dao.ContinentDAO;
+import com.mycompany.avenuecode.dto.Continent;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -18,11 +19,11 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class ContinentBBean implements ContinetRemote {
 
-    @PersistenceContext(unitName = "ContinentDTO")
+    @PersistenceContext(unitName = "Continent")
     private EntityManager em;
 
     @Override
-    public ContinentDTO save(ContinentDTO c) throws Exception {
+    public Continent save(Continent c) throws Exception {
         ContinentDAO dao = new ContinentDAO(em);
         return dao.salvar(c);
     }
@@ -34,15 +35,14 @@ public class ContinentBBean implements ContinetRemote {
     }
 
     @Override
-    public ContinentDTO consultById(Long id) {
+    public Continent consultById(Long id) {
         ContinentDAO dao = new ContinentDAO(em);
         return dao.consultById(id);
     }
 
     @Override
-    public List<ContinentDTO> getAllContinents() {
+    public List<Continent> getAllContinents() {
         ContinentDAO dao = new ContinentDAO(em);
         return dao.getAll();
     }
-
 }

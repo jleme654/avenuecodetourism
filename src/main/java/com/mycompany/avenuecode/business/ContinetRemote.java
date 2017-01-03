@@ -5,7 +5,7 @@
  */
 package com.mycompany.avenuecode.business;
 
-import com.mycompany.avenuecode.dto.ContinentDTO;
+import com.mycompany.avenuecode.dto.Continent;
 import java.util.List;
 
 /**
@@ -14,8 +14,8 @@ import java.util.List;
  */
 public interface ContinetRemote {
     
-    public ContinentDTO save(ContinentDTO c) throws Exception;
+    public Continent save(Continent c) throws Exception;
     public void remove(Long id);
-    public ContinentDTO consultById(Long id);
-    public List<ContinentDTO> getAllContinents();
+    public Continent consultById(Long id);
+    public List<Continent> getAllContinents();
 }
