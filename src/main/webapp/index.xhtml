@@ -39,16 +39,15 @@
                 </p:layoutUnit>
 
                 <p:layoutUnit position="center">
-                    <h:form id="formulario">
-                         <p:dataTable id="continent" value="#{ContinentMB.listaContinents}" 
-                                         var="p" >
-                             <h:column >
-                                    <h2><h:outputText value="Continents"/></h2>
-                                    <i><b><h:outputText value="#{p.name}"/></b></i><br/>
-                             </h:column>
-                             
-                         </p:dataTable>
-                    </h:form>
+                    <p:dataTable  value="#{continentMB.listaContinentDTOs}" 
+                                  var="p" >
+                        <p:column headerText="Name">
+                            <h:outputText value="#{p.name}" />
+                        </p:column>
+                        <p:column headerText="Population">
+                            <h:outputText value="#{p.population}" />
+                        </p:column>
+                    </p:dataTable>
                 </p:layoutUnit>
 
             </p:layout>

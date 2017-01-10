@@ -33,5 +33,7 @@ public class ApplicationConfig extends Application {
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(com.mycompany.avenuecode.business.ContinentResource.class);
         resources.add(com.mycompany.avenuecode.business.service.ContinentFacadeREST.class);
+        resources.add(com.mycompany.avenuecode.main.ExemploRest.class);
+        resources.add(com.mycompany.avenuecode.mb.ContinentMB.class);
     }
 }

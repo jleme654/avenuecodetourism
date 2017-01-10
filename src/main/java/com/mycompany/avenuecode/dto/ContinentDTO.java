@@ -21,32 +21,18 @@ import javax.xml.bind.annotation.XmlRootElement;
  *
  * @author Julio Leme
  */
-@Entity
-@Table(name = "CONTINENT")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Continent.findAll", query = "SELECT c FROM Continent c"),
-    @NamedQuery(name = "Continent.findById", query = "SELECT c FROM Continent c WHERE c.id = :id"),
-    @NamedQuery(name = "Continent.findByName", query = "SELECT c FROM Continent c WHERE c.name = :name"),
-    @NamedQuery(name = "Continent.findByPopulation", query = "SELECT c FROM Continent c WHERE c.population = :population")})
-public class Continent implements Serializable {
+public class ContinentDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "ID")
     private Integer id;
-    @Size(max = 50)
-    @Column(name = "NAME")
     private String name;
-    @Column(name = "POPULATION")
     private Integer population;
+    private static String sep = System.getProperty("line.separator");
 
-    public Continent() {
+    public ContinentDTO() {
     }
 
-    public Continent(Integer id) {
+    public ContinentDTO(Integer id) {
         this.id = id;
     }
 
@@ -84,10 +70,10 @@ public class Continent implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Continent)) {
+        if (!(object instanceof ContinentDTO)) {
             return false;
         }
-        Continent other = (Continent) object;
+        ContinentDTO other = (ContinentDTO) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -96,7 +82,12 @@ public class Continent implements Serializable {
 
     @Override
     public String toString() {
-        return "com.mycompany.avenuecode.dto.Continent[ id=" + id + " , name="+name+"]";
+        StringBuilder sb = new StringBuilder();
+        sb.append(name);
+        sb.append(" | ");
+        sb.append(population);
+        sb.append(sep);
+        return sb.toString();
     }
-    
+
 }

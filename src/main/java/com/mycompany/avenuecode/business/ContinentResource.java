@@ -18,6 +18,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.core.MediaType;
 
 /**
  *
@@ -32,7 +33,7 @@ public class ContinentResource {
     private ContinetRemote ejb;
 
     @GET
-    @Produces("application/json")
+    @Produces(MediaType.APPLICATION_JSON)
     public String getContinents() {
         return gson.toJson(ejb.getAllContinents());
     }

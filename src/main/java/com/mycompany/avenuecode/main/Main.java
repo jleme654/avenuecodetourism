@@ -8,7 +8,10 @@ package com.mycompany.avenuecode.main;
 import com.mycompany.avenuecode.business.ContinentBBean;
 import com.mycompany.avenuecode.dao.Conexao;
 import com.mycompany.avenuecode.dao.ContinentDAO;
+import com.mycompany.avenuecode.dto.Continent;
+import com.mycompany.avenuecode.dto.ContinentDTO;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,8 +22,12 @@ import java.util.logging.Logger;
 public class Main {
 
     public static void main(String[] args) {
-        ContinentBBean c = new ContinentBBean();
-        System.out.println(c.getAllContinents());
+        ContinentDAO dao = new ContinentDAO();
+        
+        List<ContinentDTO> lista = dao.getAllContinents();
+        for (ContinentDTO continent : lista) {
+            System.out.println(continent);
+        }
 //        Conexao con = new Conexao();
 //        try {
 //            System.out.println(con.getConnection());
